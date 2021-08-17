@@ -43,6 +43,7 @@ class Api(object):
             params = {}
         if resource_id is not None:
             resource = "%s/%s" % (resource, resource_id)
+        print('Running requests with following params - %s, %s, %s, %s, %s, %s' % (method, self.base_url + resource, self.auth, self.headers, data, params))
         response = requests.request(method, self.base_url + resource,
                                     auth=self.auth,
                                     headers=self.headers,
